@@ -2,7 +2,7 @@
 // Generated on Fri Jan 26 2018 22:37:25 GMT+0800 (CST)
 
 module.exports = function(config) {
-  config.set({
+  var configuration ={
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
     basePath: '',
@@ -74,10 +74,10 @@ module.exports = function(config) {
     // Concurrency level
     // how many browser should be started simultaneous
     concurrency: Infinity
-  });
+  };
   // https://swizec.com/blog/how-to-run-javascript-tests-in-chrome-on-travis/swizec/6647
   if (process.env.TRAVIS) {
-    configuration.browsers = ["Chrome_travis_ci"];
+    configuration.browsers = ["Chrome_travis_ci",'Chrome', 'ChromeHeadless', 'ChromeHeadlessNoSandbox'];
   }
   config.set(configuration);
 }
