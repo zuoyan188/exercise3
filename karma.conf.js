@@ -1,8 +1,8 @@
 // Karma configuration
-// Generated on Fri Jan 26 2018 22:37:25 GMT+0800 (CST)
+// Generated on Sun Jan 28 2018 09:37:26 GMT+0100 (Paris, Madrid)
 
 module.exports = function(config) {
-  var configuration ={
+  config.set({
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
     basePath: '',
@@ -15,10 +15,10 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'https://cdn.bootcss.com/jquery/2.2.4/jquery.js',
+      'https://code.jquery.com/jquery-2.2.4.js',
       'node_modules/should/should.js',
-      'test/**.js'
-    ],
+      'test/***.js',
+       ],
 
 
     // list of files to exclude
@@ -57,27 +57,15 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['Chrome', 'ChromeHeadless', 'ChromeHeadlessNoSandbox'],
-
-    customLaunchers: {
-      ChromeHeadlessNoSandbox: {
-        base: 'ChromeHeadless',
-        flags: ['--no-sandbox']
-      }
-    },
+    browsers: ['Chrome'],
 
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
-    singleRun: process.env.TRAVIS,
+    singleRun: false,
 
     // Concurrency level
     // how many browser should be started simultaneous
     concurrency: Infinity
-  };
-  // https://swizec.com/blog/how-to-run-javascript-tests-in-chrome-on-travis/swizec/6647
-  if (process.env.TRAVIS) {
-    configuration.browsers = ["Chrome_travis_ci",'Chrome', 'ChromeHeadless', 'ChromeHeadlessNoSandbox'];
-  }
-  config.set(configuration);
+  })
 }
