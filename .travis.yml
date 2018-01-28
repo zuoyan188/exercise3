@@ -2,6 +2,7 @@ language: node_js
 node_js:
   # - "iojs"
   - "6.10.0"
+dist: trusty
 sudo: required
 addons:
   chrome: stable

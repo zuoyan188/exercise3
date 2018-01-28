@@ -38,6 +38,8 @@ describe('jQuery', function () {
                   resolve();
               }).then(function(){
                 done();
-              });
+              }).catch(err){
+                console.log(err);
+              };
   })
 })
