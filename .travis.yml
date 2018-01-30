@@ -2,6 +2,9 @@ language: node_js
 node_js:
   # - "iojs"
   - "6.10.0"
+sudo: required
+addons:
+  chrome: stable
 before_script:
   - export CHROME_BIN=chromium-browser
   - export DISPLAY=:99.0
